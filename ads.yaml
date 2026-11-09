@@ -1,0 +1,6 @@
+payload:
+  - '+.doubleclick.net'        # +. 表示该域及其所有子域
+  - '+.googlesyndication.com'
+  - '+.umeng.com'
+  - '+.adjust.com'
+  - 'ads.example.com'          # 不带 +. = 精确匹配这一个域
