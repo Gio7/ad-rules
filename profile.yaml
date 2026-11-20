@@ -113,35 +113,18 @@ proxy-groups:
 
 # 广告与追踪域名规则集，每 24 小时更新。
 rule-providers:
-  ad-antiad:
+  gio-ads:
     type: http
     behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/privacy-protection-tools/anti-ad.github.io/master/docs/mihomo.mrs
-    path: ./ad-rules/ad-antiad.mrs
-    interval: 86400
-    proxy: 🪜流量
-  ad-hagezi-normal:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/Erfan4700/HaGeZi_BlockLists_Compiled_format/release/mrs/HageziNormal.mrs
-    path: ./ad-rules/ad-hagezi-normal.mrs
-    interval: 86400
-    proxy: 🪜流量
-  geoip-cn:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
-    path: ./ad-rules/geoip-cn.mrs
+    format: yaml
+    url: https://raw.githubusercontent.com/gio7/ad-rules/main/ads.yaml
+    path: ./ad-rules/gio-ads.yaml
     interval: 172800
     proxy: 🪜流量
 
 rules:
 # 优先拦截广告；AD 组选择 DIRECT 可临时关闭拦截。
-- RULE-SET,ad-antiad,AD
-- RULE-SET,ad-hagezi-normal,AD
+- RULE-SET,gio-ads,AD
 - DST-PORT,25,DIRECT
 - DST-PORT,465,DIRECT
 - DST-PORT,587,DIRECT
@@ -776,7 +759,6 @@ rules:
 - IP-CIDR,119.28.28.28/32,DIRECT,no-resolve
 - DOMAIN-SUFFIX,cn,DIRECT
 - DOMAIN-KEYWORD,-cn,DIRECT
-- RULE-SET,geoip-cn,DIRECT
 - MATCH,DIRECT
 
 #url:https://clash-sub.jiyeduxing.cyou/config.yaml?token=w4BNzirMK2XtN
