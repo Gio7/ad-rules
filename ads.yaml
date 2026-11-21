@@ -8,4 +8,5 @@ payload:
   - '+.doubleclick-cn.net'
   - '+.mobilefuse.com'
   - '+.adsmoloco.com'
+  - '+.dinogoglobal.com'
   - 'ads.example.com'          # 不带 +. = 精确匹配这一个域
