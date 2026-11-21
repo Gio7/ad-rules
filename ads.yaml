@@ -6,5 +6,6 @@ payload:
   - '+.unity3d.com'
   - '+.applovin.com'
   - '+.doubleclick-cn.net'
-  - '+.cdn.mobilefuse.com'
+  - '+.mobilefuse.com'
+  - '+.adsmoloco.com'
   - 'ads.example.com'          # 不带 +. = 精确匹配这一个域
